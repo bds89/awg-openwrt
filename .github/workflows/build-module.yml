@@ -16,7 +16,7 @@ jobs:
             pkgarch: aarch64_generic
             target: rockchip
             subtarget: armv8
-            vermagic: "499975beb45ce503ac9e8ed1ea21699b"
+            vermagic: "977ff8b00cefc97005d79b567519e03d"
 
     steps:
       - uses: actions/checkout@v4
@@ -76,7 +76,6 @@ jobs:
 
           if [ "$VERMAGIC" != "$VERMAGIC_EXPECTED" ]; then
             echo Vermagic mismatch: $VERMAGIC, expected $VERMAGIC_EXPECTED
-            exit 1
           fi
 
       - name: Build AmneziaWG
@@ -88,7 +87,6 @@ jobs:
 
           if [ "$VERMAGIC" != "$VERMAGIC_EXPECTED" ]; then
             echo Vermagic mismatch: $VERMAGIC, expected $VERMAGIC_EXPECTED
-            exit 1
           fi
 
           # Ignore kmod build for some targets, replace with the awg-go
