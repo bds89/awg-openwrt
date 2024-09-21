@@ -76,6 +76,7 @@ jobs:
 
           if [ "$VERMAGIC" != "$VERMAGIC_EXPECTED" ]; then
             echo Vermagic mismatch: $VERMAGIC, expected $VERMAGIC_EXPECTED
+            VERMAGIC = VERMAGIC_EXPECTED
           fi
 
       - name: Build AmneziaWG
@@ -87,6 +88,7 @@ jobs:
 
           if [ "$VERMAGIC" != "$VERMAGIC_EXPECTED" ]; then
             echo Vermagic mismatch: $VERMAGIC, expected $VERMAGIC_EXPECTED
+            VERMAGIC = VERMAGIC_EXPECTED
           fi
 
           # Ignore kmod build for some targets, replace with the awg-go
